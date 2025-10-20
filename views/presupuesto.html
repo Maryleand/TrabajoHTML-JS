@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="Es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Drivion</title>
+        <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <!--Div banner con logo-->
+            <div style="background-image: url(../images/banner.jpg);" id="bannerlogo">
+                <img src="../images/Logocoche.png" alt="logotipo" id="imgbannerlogo">
+            </div>
+            <!-- Div que contiene el menú -->
+            <div id="menu">
+                <a href="#" id="namepag">Drivion</a>
+                <span class="boton"><a href="../index.html" class="textboton">Inicio</a></span>
+                <span class="boton"><a href="galeria.html" class="textboton">Galeria</a></span>
+                <span class="boton"><a href="#" class="textboton" id="pagactual">Presupuesto</a></span>
+                <span class="boton"><a href="contacto.html" class="textboton">Contacto</a></span>
+            </div>
+        </header>
+        <section class="sections" id="inicio">
+            <h1 class="tituloPresu">Rellena con tus datos y obten un presupuesto a tu medida</h1>
+            <div class="disSections">
+                <form name="presupuesto" id="presupuesto" action="#" method="POST" onsubmit="return validar(this)">
+                    <div id="formpresupuesto">  
+                        <h3 id="textFormpresupuesto">Datos a ingresar</h3>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="nombre">Nombre:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="nombre" name="nombre" value="" placeholder="Tu nombre" required  maxlength="15" pattern="[A-Za-z\s]+">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="apellidos">Apellidos:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="apellidos" name="apellidos" value="" placeholder="Sus apellidos" maxlength="40" pattern="[A-Za-z\s]+" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">Email:</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="email" id="email" value="" placeholder="Tudireccion@correo.com" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="telefono">Teléfono:</label>
+                                </td>
+                                <td>
+                                    <input type="tel" id="telefono" name="telefono" value="" placeholder="123456789" required pattern="[0-9]{9}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br><br>
+                                    <input type="checkbox" id="privacy" name="privacy">
+                                    Acepto las políticas de privacidad  <!-- Nota: Deberías considerar añadir un label aquí también, por ejemplo: <label for="privacy">Acepto las políticas de privacidad</label> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="botonesForm">
+                                        <button type="reset" id="boton1" class="botonsForm">
+                                            Reiniciar
+                                        </button>
+                                        <button type="submit" id="boton2" class="botonsForm">
+                                            Enviar
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="formpresupuestoprecio">
+                        <div class="parteFormpresupuesto">
+                            <div>
+                                <h3>Productos disponibles</h3>
+                                <select name="seleccionproducto" id="seleccionproducto">
+                                    <option value="">--Seleciona un producto--</option>
+                                    <option value="Toyota Corolla:2500">Toyota Corolla 2500€</option>
+                                    <option value="Ford Mustang:4000">Ford Mustang 4000€</option>
+                                    <option value="Volkswagen ID.4:3000">Volkswagen ID.4 3000€</option>
+                                </select>
+                                <button type="button" id="agregar" >Seleccionar</button>
+                            </div>
+                            <div class="contenedorProducto" id="contenedor">
+                                <h3>Producto seleccionado</h3>
+                                <div id="productoSeleccionado"></div>
+                            </div>
+                        </div>
+
+                        <div class="extras">
+                            <h3>Extras</h3>
+                            <label>
+                            <input type="checkbox" class="checkbox-extras" value="Seguro:55">
+                            Seguro/1 año 55€
+                            </label>
+                            <label>
+                            <input type="checkbox" class="checkbox-extras" value="Kit:35">
+                            Kit: Parasol, soporte de movil y funda de asientos 35€
+                            </label>
+                            <label>
+                            <input type="checkbox" class="checkbox-extras" value="Lona:15">
+                            Lona impermeable 15€
+                            </label>
+                        </div>
+                        <div class="parteFormpresupuesto">
+                            <div class="SeleccPlazos">
+                                <h3>Plazo en el que desea pagar</h3>
+                                <label>
+                                <input type="number" name="Plazo" id="Plazo" min="1" max="36" value="1" required>
+                                Meses
+                                </label>
+                            </div>
+                            <div id="totalFinal"><p class="total" id="total-final">Total final: 0€</p></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="sections">
+            <div class="textNuevo"><h2>Opiniones de nuestros clientes</h2></div>
+            <div class="disSections">
+                <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"Justo lo que buscaba" </div>
+                <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"Cumplierón todas mis expectativas, buena atencion y producto de buena calidad"</div>
+                <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"¡Siempre que puedo los recomiendo!"</div>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>
+                Calle Compositor │ Lehmberg Ruiz, 5, Distrito Centro │ Málaga │ 29007 │ España
+            </p>
+            <p>
+                Drivion S.L. • Todos los derechos reservados • Aviso legal • Politica de privacidad • Politica de cookies
+            </p>
+            <nav id="redessociales">
+                <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="logo de youtube"></a>
+                <a href="https://www.facebook.com"><img src="../images/facebook.png" alt="logo de facebook"></a>
+                <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="logo de instagram"></a>
+            </nav>
+        </footer>
+        <script src="../js/scripts.js"></script>
+    </body>
+</html>

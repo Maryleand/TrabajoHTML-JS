@@ -1,0 +1,8 @@
+<noticias>
+    <noticia>
+        <titulo>Lanzamiento del nuevo modelo XYZ 2024</titulo>
+        <descripcion>El fabricante de automóviles XYZ ha presentado su nuevo modelo 2024, que promete revolucionar el mercado con su tecnología avanzada y diseño aerodinámico.</descripcion>
+        <fecha>2023-11-01</fecha>
+        <imagen>images/pexels-pixabay-261985.jpg</imagen>
+    </noticia>
+</noticias>
