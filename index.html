@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Drivion</title>
+        <!--Llamada a estilos locales-->
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
     </head>
+    <!--Funcion para cargar contenido xml-->
     <body onload="cargar()">
         <header>
-            <!--Div banner con logo-->
+            <!--Div con logo-->
             <div style="background-image: url(images/banner.jpg);" id="bannerlogo">
                 <img src="images/Logocoche.png" alt="logotipo" id="imgbannerlogo">
             </div>
@@ -20,8 +22,10 @@
                 <span class="boton"><a href="views/contacto.html" class="textboton">Contacto</a></span>
             </div>
         </header>
+        <!--Primer Section-->
         <section class="sections" id="inicio">
             <div class="disSections">
+                <!--Div con texto + Div con imagen-->
                 <div id="Vision">
                     <h1>Tu bienestar es nuestra prioridad</h1>
                     <p>Al equipo de DRIVION le complace saber que cada día más personas confían en ellos e invitan a explorar el amplio catálogo de vehículos que posee. 
@@ -32,8 +36,10 @@
                 </div>
             </div>
         </section>
+        <!--Segunda Section-->
         <section class="sections">
             <div class="disSections">
+                <!--Div con imagen + Div con texto y boton-->
                 <div>
                     <img src="images/section2.jpg" alt="Personas comprando automóviles" id="imgbannPres">
                 </div>
@@ -43,19 +49,25 @@
                 </div>
             </div>
         </section>
+        <!--Tercer Section-->
         <section class="sections">
+            <!--Div con H3 + Div-->
             <div class="textTitulo"><h3>Promociones</h3></div>
             <div class="disSections">
+                <!--Div con imagen + Div con texto-->
                 <div id="bannerPromo">
                     <img src="images/promocion.jpg" id="imgPromo" alt="vehículo"><span class="bPromo"><a href="views/contacto.html">Contacta ya</a></span>
                 </div>
                 <div id="bannerPromo2"><p>Más promociones proximamente...</p></div>
             </div>
         </section>
+        <!--Cuarto Section-->
         <section class="sections">
+            <!--Div con h4 + Div con contenido cargado desde XML-->
             <div class="textTitulo"><h4>Ultimas noticias</h4></div>
             <div id="noticias"></div>
         </section>
+        <!--Footer con direccion de la tienda + enlaces a redes sociales + aviso legal-->
         <footer class="footer">
             <p>
                 Calle Compositor │ Lehmberg Ruiz, 5, Distrito Centro │ Málaga │ 29007 │ España
@@ -64,12 +76,12 @@
                 Drivion S.L. • Todos los derechos reservados • Aviso legal • Politica de privacidad • Politica de cookies
             </p>
             <nav id="redessociales">
-                <!--Los enlaces y las imagenes se encuentran juntos ya que al indentarlos provoca un error visual-->
                 <a href="https://www.youtube.com"><img src="images/youtube.png" alt="logo de youtube"></a>
                 <a href="https://www.facebook.com"><img src="images/facebook.png" alt="logo de facebook"></a>
                 <a href="https://www.instagram.com"><img src="images/instagram.png" alt="logo de instagram"></a>
             </nav>
         </footer>
+        <!--Llamada a scripts locales-->
         <script src="js/scripts.js"></script>
     </body>
 </html>

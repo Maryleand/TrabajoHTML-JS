@@ -3,13 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Drivion</title>
+        <!--Llamadas a estilos locales y externos-->
         <link rel="stylesheet" type="text/css" href="../librerias/VerySimpleSlider/slider.css">
         <link rel="stylesheet" type="text/css" href="../css/estilos.css">
         <link href="../librerias/lightbox2-2.11.5/lightbox2-2.11.5/src/css/lightbox.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <!--Div banner con logo-->
+            <!--Div con logo-->
             <div style="background-image: url(../images/banner.jpg);" id="bannerlogo">
                 <img src="../images/Logocoche.png" alt="logotipo" id="imgbannerlogo">
             </div>
@@ -22,9 +23,12 @@
                 <span class="boton"><a href="contacto.html" class="textboton">Contacto</a></span>
             </div>
         </header>
+        <!--Primer section-->
         <section class="sections" id="inicio">
+            <!--H1 + Div-->
             <h1>Los mejores del mercado</h1>
             <div>
+                <!--Div de imagenes + Div con texto-->
                 <div class="divProduc">
                     <a href="../images/pexels-mikebirdy-116675.jpg" data-lightbox="Producto"><img src="../images/pexels-mikebirdy-116675.jpg" alt="Carro" class="imgProduc"></a>
                     <a href="../images/pexels-mikebirdy-244206.jpg" data-lightbox="Producto"><img src="../images/pexels-mikebirdy-244206.jpg" alt="Carro" class="imgProduc" ></a>
@@ -37,21 +41,27 @@
                 </div>
             </div>
         </section>
-        <section class="sections"> <div class="textTitulo"><h2>Recién llegado</h2></div>
-                    <div class="disSections">
+        <!--Segunda section-->
+        <section class="sections"> 
+            <!--Div con H2 + Div-->
+            <div class="textTitulo"><h2>Recién llegado</h2></div>
+            <div class="disSections">
+                <!--Div con ul + Div con imagenes-->
                 <div id="Nuevo"><span class="tituloPresu">Tesla Model Y: Innovación y Sostenibilidad</span><br><br><br>El Tesla Model Y es un SUV totalmente eléctrico que combina un diseño elegante con una avanzada tecnología de conducción autónoma. <br><br><br>Cuenta con:<br><br>
-                <ul>
-                    <li>Capacidad para hasta siete pasajeros y un impresionante alcance de hasta 525 kilómetros con una sola carga, este modelo redefine la experiencia de manejo.<br></li>
-                    <li>Interior minimalista está equipado con una pantalla táctil de 15 pulgadas que controla todas las funciones del vehículo, proporcionando un ambiente moderno y práctico.</li>
-                </ul><br><br>Además, al tratarse de un modelo nuevo, ¡estará disponible con descuentos únicos por tiempo limitado!.<br><br> No pierdas la oportunidad de ser parte del futuro con el Tesla Model Y.
-            </div>
-            <div>
-                <a href="../images/pexels-lynxexotics-3802508.jpg" data-lightbox="Nuevo"><img src="../images/pexels-lynxexotics-3802508.jpg" alt="Carro" class="imgProduc"></a>
-                <a href="../images/xdthsetset.jpg" data-lightbox="Nuevo"><img src="../images/xdthsetset.jpg" alt="Carro" class="imgProduc" ></a>
+                    <ul>
+                        <li>Capacidad para hasta siete pasajeros y un impresionante alcance de hasta 525 kilómetros con una sola carga, este modelo redefine la experiencia de manejo.<br></li>
+                        <li>Interior minimalista está equipado con una pantalla táctil de 15 pulgadas que controla todas las funciones del vehículo, proporcionando un ambiente moderno y práctico.</li>
+                    </ul><br><br>Además, al tratarse de un modelo nuevo, ¡estará disponible con descuentos únicos por tiempo limitado!.<br><br> No pierdas la oportunidad de ser parte del futuro con el Tesla Model Y.
+                </div>
+                <div>
+                    <a href="../images/pexels-lynxexotics-3802508.jpg" data-lightbox="Nuevo"><img src="../images/pexels-lynxexotics-3802508.jpg" alt="Carro" class="imgProduc"></a>
+                    <a href="../images/xdthsetset.jpg" data-lightbox="Nuevo"><img src="../images/xdthsetset.jpg" alt="Carro" class="imgProduc" ></a>
                 </div>
             </div>
         </section>
+        <!--Tercer section-->
         <section class="sections"> 
+            <!--Div con H3 + Div con ul (Slider)-->
             <div class="textBorderinset"><h3 class="titleProduc"> Proximamente disponibles</h3></div>
             <div id="slider">
                 <a href="#" class="control_next">→</a>
@@ -63,6 +73,7 @@
                 </ul>  
             </div>
         </section>
+        <!--Footer con direccion de la tienda + enlaces a redes sociales + aviso legal-->
         <footer class="footer">
             <p>
                 Calle Compositor │ Lehmberg Ruiz, 5, Distrito Centro │ Málaga │ 29007 │ España
@@ -71,22 +82,23 @@
                 Drivion S.L. • Todos los derechos reservados • Aviso legal • Politica de privacidad • Politica de cookies
             </p>
             <nav id="redessociales">
-                <!--Los enlaces y las imagenes se encuentran juntos ya que al indentarlos provoca un error visual-->
                 <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="logo de youtube"></a>
                 <a href="https://www.facebook.com"><img src="../images/facebook.png" alt="logo de facebook"></a>
                 <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="logo de instagram"></a>
             </nav>
         </footer>
+        <!--Llamadas a scripts locales y externos-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../js/scripts.js"></script>
         <script src="../librerias/VerySimpleSlider/slider.js"></script>
         <script src="../librerias/lightbox2-2.11.5/lightbox2-2.11.5/src/js/lightbox.js"></script>
+        <!--Script para la configuracion de lightbox-->
         <script>
             lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'disableScrolling': true,
-            'showImageNumberLabel': false,
+            'resizeDuration': 200, //Duracion de la animacion
+            'wrapAround': true,//Sirve para cambiar de imagen infinitamente aunque se llegue a la ultima
+            'disableScrolling': true, //Evitar srcoll al visualizar imagen
+            'showImageNumberLabel': false, //Ver numero de imagen
             })
         </script>
     </body>

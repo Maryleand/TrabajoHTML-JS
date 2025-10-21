@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Drivion</title>
+        <!--Llamada a estilos locales-->
         <link rel="stylesheet" type="text/css" href="../css/estilos.css">
     </head>
     <body>
         <header>
-            <!--Div banner con logo-->
+            <!--Div con logo-->
             <div style="background-image: url(../images/banner.jpg);" id="bannerlogo">
                 <img src="../images/Logocoche.png" alt="logotipo" id="imgbannerlogo">
             </div>
@@ -20,11 +21,16 @@
                 <span class="boton"><a href="contacto.html" class="textboton">Contacto</a></span>
             </div>
         </header>
+        <!--Primer section-->
         <section class="sections" id="inicio">
+            <!--H1 + Div-->
             <h1 class="tituloPresu">Rellena con tus datos y obten un presupuesto a tu medida</h1>
             <div class="disSections">
+                <!--Form con 2 Divs-->
                 <form name="presupuesto" id="presupuesto" action="#" method="POST" onsubmit="return validar(this)">
-                    <div id="formpresupuesto">  
+                    <!--Primera parte-->
+                    <div id="formpresupuesto">
+                        <!--H3 + table-->  
                         <h3 id="textFormpresupuesto">Datos a ingresar</h3>
                         <table>
                             <tr>
@@ -62,7 +68,7 @@
                             <tr>
                                 <td colspan="2"><br><br>
                                     <input type="checkbox" id="privacy" name="privacy">
-                                    Acepto las políticas de privacidad  <!-- Nota: Deberías considerar añadir un label aquí también, por ejemplo: <label for="privacy">Acepto las políticas de privacidad</label> -->
+                                    <label for="privacy">Acepto las políticas de privacidad</label>
                                 </td>
                             </tr>
                             <tr>
@@ -79,9 +85,11 @@
                             </tr>
                         </table>
                     </div>
-
+                    <!--Segunda parte-->
                     <div id="formpresupuestoprecio">
+                        <!--Div seleccion del producto-->
                         <div class="parteFormpresupuesto">
+                            <!--Div Seleccion de producto-->
                             <div>
                                 <h3>Productos disponibles</h3>
                                 <select name="seleccionproducto" id="seleccionproducto">
@@ -92,13 +100,15 @@
                                 </select>
                                 <button type="button" id="agregar" >Seleccionar</button>
                             </div>
+                            <!--Div contenedor visualizar seleccion-->
                             <div class="contenedorProducto" id="contenedor">
                                 <h3>Producto seleccionado</h3>
                                 <div id="productoSeleccionado"></div>
                             </div>
                         </div>
-
+                        <!--Div extras-->
                         <div class="extras">
+                            <!--H3 + inputs checkbox-->
                             <h3>Extras</h3>
                             <label>
                             <input type="checkbox" class="checkbox-extras" value="Seguro:55">
@@ -113,7 +123,9 @@
                             Lona impermeable 15€
                             </label>
                         </div>
+                        <!--Div plazos y total final-->
                         <div class="parteFormpresupuesto">
+                            <!--Div seleccion de plazos-->
                             <div class="SeleccPlazos">
                                 <h3>Plazo en el que desea pagar</h3>
                                 <label>
@@ -121,20 +133,25 @@
                                 Meses
                                 </label>
                             </div>
+                            <!--Div Total final-->
                             <div id="totalFinal"><p class="total" id="total-final">Total final: 0€</p></div>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
+        <!--Segunda section-->
         <section class="sections">
+            <!--Div con h2 + Div-->
             <div class="textNuevo"><h2>Opiniones de nuestros clientes</h2></div>
             <div class="disSections">
+                <!--Divs con imagenes y texto-->
                 <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"Justo lo que buscaba" </div>
                 <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"Cumplierón todas mis expectativas, buena atencion y producto de buena calidad"</div>
                 <div class="opiniones"><img src="../images/resenas-en-linea.png" alt="Icono de reseñas" class="imgOpiniones"><br>"¡Siempre que puedo los recomiendo!"</div>
             </div>
         </section>
+        <!--Footer con direccion de la tienda + enlaces a redes sociales + aviso legal-->
         <footer class="footer">
             <p>
                 Calle Compositor │ Lehmberg Ruiz, 5, Distrito Centro │ Málaga │ 29007 │ España
@@ -148,6 +165,7 @@
                 <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="logo de instagram"></a>
             </nav>
         </footer>
+        <!--Llamada a scripts locales-->
         <script src="../js/scripts.js"></script>
     </body>
 </html>

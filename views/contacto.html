@@ -3,17 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Drivion</title>
+        <!--Llamadas a estilos locales y externos-->
         <link rel="stylesheet" type="text/css" href="../css/estilos.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""> 
         <link rel="stylesheet" href="../librerias/leaflet-routing-machine-3.2.12/leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css"> 
     </head>
     <body>
         <header>
-            <!--Div banner con logo-->
+            <!--Div con logo-->
             <div style="background-image: url(../images/banner.jpg);" id="bannerlogo">
             <img src="../images/Logocoche.png" alt="logotipo" id="imgbannerlogo">
             </div>
-            <!-- Div que contiene el menú -->
+            <!-- Div que contiene el menú + nombre de la web-->
             <div id="menu">
                 <a href="#" id="namepag">Drivion</a>
                 <span class="boton"><a href="../index.html" class="textboton">Inicio</a></span>
@@ -22,7 +23,9 @@
                 <span class="boton"><a href="#" class="textboton" id="pagactual">Contacto</a></span>
             </div>
         </header>
+        <!--Primera section-->
         <section class="sections" id="inicio">
+            <!--H1 + table-->
             <h1>Nuestros datos: </h1>
             <div id="divContacto">
                 <div id="divTablaC">
@@ -47,15 +50,19 @@
                         </tr>
                     </table>
                 </div>
+                <!--Div con imagen-->
                 <div>
                     <img src="../images/pexels-davidmcbee-395537.jpg" alt="concesionario de coches" id="imgContacto">
                 </div>
             </div>
         </section>
+        <!--Segunda section-->
         <section class="sections">
+            <!--Div con h2 + div del mapa-->
             <div class="textBorderinset"><h2>Ven a visitarnos</h2></div>
             <div id="Mapa"></div>
         </section>
+        <!--Footer con direccion de la tienda + enlaces a redes sociales + aviso legal-->
         <footer class="footer">
             <p>
                 Calle Compositor │ Lehmberg Ruiz, 5, Distrito Centro │ Málaga │ 29007 │ España
@@ -64,40 +71,38 @@
                 Drivion S.L. • Todos los derechos reservados • Aviso legal • Politica de privacidad • Politica de cookies
             </p>
             <nav id="redessociales">
-                <!--Los enlaces y las imagenes se encuentran juntos ya que al indentarlos provoca un error visual-->
                 <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="logo de youtube"></a>
                 <a href="https://www.facebook.com"><img src="../images/facebook.png" alt="logo de facebook"></a>
                 <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="logo de instagram"></a>
             </nav>
         </footer>
+        <!--Llamadas a scripts locales y externos-->
         <script src="../js/scripts.js"></script>
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
         <script src="../librerias/leaflet-routing-machine-3.2.12/leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
-
+        <!--Script para la configuracion del mapa-->
         <script>
-            // Centra el mapa en el centro de Málaga
-            var mimapa = L.map("Mapa").setView([36.7213, -4.4214], 15);  // Zoom 15 para ruta detallada local
-            // Capa de tiles de OpenStreetMap (con HTTPS para evitar warnings)
+            // Direccion + zoom
+            var mimapa = L.map("Mapa").setView([36.7213, -4.4214], 15);
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 18, 
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
             }).addTo(mimapa); 
-           // Evento de clic para mostrar posición (opcional, puedes quitarlo)
+           // Evento para mostrar posición (opcional)
             mimapa.on("click", function(e) {
                 var pixelPosition = e.layerPoint;
                 var latLng = mimapa.layerPointToLatLng(pixelPosition);
                 alert("Position = " + pixelPosition + "\n LatLng = " + latLng); 
                 });
-            // Control de ruta: Usando coordenadas fijas para evitar problemas de geocoding
-            // Configuración explícita del router con OSRM para estabilidad
+            // Control de ruta usando coordenadas fijas
             L.Routing.control({
                 waypoints: [
                     L.latLng(36.7213, -4.4214),  // Inicio: Centro de Málaga (Plaza de la Constitución)
-                    L.latLng(36.7215, -4.4198)   // Destino: Calle Compositor Lehmberg Ruiz, 5 (coordenadas exactas)
+                    L.latLng(36.7215, -4.4198)   // Destino: Calle Compositor Lehmberg Ruiz, 5
                 ],
-                // Opcional: Personaliza para no mostrar instrucciones detalladas si no las quieres
-                show: true,  // Oculta el panel de instrucciones (solo ruta en mapa)
-                addWaypoints: false  // Evita agregar waypoints extras al clic
+                // Panel de instrucciones
+                show: true,
+                addWaypoints: false  // Evita agregar waypoints al clickar
             }).addTo(mimapa);
         </script>
     </body>
