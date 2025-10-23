@@ -1,3 +1,4 @@
+//Aplicar clase a los botones del menu (cuando se encuentra en dicha pagina)
 const pagactual = document.getElementById('pagactual')
 
 pagactual.onmouseover = function(){
@@ -6,6 +7,8 @@ pagactual.onmouseover = function(){
 pagactual.onmouseout = function(){
     pagactual.style.backgroundColor ='#3D6EAD';}
 
+
+//Funcion para cambiar position de la barra de navegacion al hacer scroll
 const barnav = document.getElementById ('menu')
 
 window.addEventListener('scroll', function() {
@@ -31,6 +34,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
+//Funcion para cargar conntenido XML
         function cargar() {
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -57,20 +61,23 @@ window.addEventListener('scroll', function() {
             document.getElementById("noticias").innerHTML = cadena;
         }
 
-        presupuesto.nombre.focus()
+
+//Funciones para el formulario en presupuesto.html
+
+//Focus primer input
+presupuesto.nombre.focus()
 
 //Array productos
-
 let contenedor = []
 
-//Elementos del dom (creados)
+//Elementos
 
 const selectorproducto = document.getElementById("seleccionproducto")
 const botonagregar = document.getElementById("agregar")
 const contenedorSeleccion = document.getElementById("productoSeleccionado")
 const elementototalfinal = document.getElementById("total-final")
 
-//Evento agregar productos
+//Evento para agregar productos
 
 botonagregar.addEventListener('click', () => {
     const opcionselecionada = selectorproducto.options[selectorproducto.selectedIndex];
@@ -85,19 +92,19 @@ botonagregar.addEventListener('click', () => {
     const precio = parseFloat(precioProducto);
 
     // Limpiar el carrito para asegurar solo un producto
-    contenedor.length = 0;  // Esto vacía el array sin eliminar la referencia (eficiente)
+    contenedor.length = 0;
 
-    // Agregar el nuevo producto (ahora solo habrá uno)
+    // Agregar el nuevo producto
     contenedor.push({ nombre: nombreProducto, precio });
 
-    // Opcional: Resetear el selector al primer opción (para indicar que se seleccionó)
+    //Resetear el selector
     selectorproducto.selectedIndex = 0;
 
     actualizarContenedor();
 });
 
 
-//Actualizar contenedor
+//Actualizar contenedor de visualizacion seleccion
 
 function actualizarContenedor(){
     //limpiar contenido anterior
@@ -108,9 +115,9 @@ function actualizarContenedor(){
     //Mostrar productos
 
     contenedor.forEach((producto, index) =>{
-        totalContenedor += producto.precio //con esto decimos que cada objeto del producto del
-        //  array contenedor se llama producto, y estamos escogiendo el valor precio
+        totalContenedor += producto.precio //cada objeto del array contenedor se llama producto, y se escoge el valor precio
 
+        //Agrega producto + boton de eliminar
         const productoContenedor = document.createElement('div')
         productoContenedor.classList.add('articulo-contenedor')
         productoContenedor.innerHTML = `
@@ -120,7 +127,7 @@ function actualizarContenedor(){
         contenedorSeleccion.appendChild(productoContenedor)
     })
 
-    //funcionalidad para eliminar productos
+    //funcion para eliminar productos
     document.querySelectorAll('.eliminararticulo').forEach((boton)=> {
         boton.addEventListener('click', (e) => {
             const index = e.target.dataset.index
@@ -133,10 +140,8 @@ function actualizarContenedor(){
 
 //eliminar productos contenedor
 function eliminararticulo(index){
-    //eliminar producto
 contenedor.splice(index, 1)
 //actualizar contenedor
-
 actualizarContenedor()
 }
 
@@ -153,14 +158,15 @@ function actualizarTotalfinal(){
         const [, precioExtra] = checkbox.value.split(':')
         total += parseFloat(precioExtra)
     })
-
+    
+    //sumar precio plazos 
     const tiempoPlazo = document.getElementById("Plazo")
     if(tiempoPlazo){
         const cantidadPlazo = parseFloat (tiempoPlazo.value)
         total = total / cantidadPlazo
     }
 
-
+    //mostrar total
     elementototalfinal.textContent = `Total final: ${total.toFixed(2)} €`
 }
 
@@ -171,16 +177,18 @@ checkoxextras.forEach((checkbox) => {
     checkbox.addEventListener('change', actualizarTotalfinal)
 })
 
+//actualizar total cuando se selecione un plazo
+
 const tiempoPlazo = document.getElementById("Plazo")
 if (tiempoPlazo) {
-    // Escuchar el evento 'input' para actualizar en tiempo real mientras se escribe
+    // Evento input para actualizar en tiempo real mientras se escribe
     tiempoPlazo.addEventListener('input', actualizarTotalfinal);
     
-    // Llamar a la función inicialmente para mostrar el total con el valor por defecto (1 mes)
+    // Llamada a la función para mostrar el total con el valor por defecto (1 mes)
     actualizarTotalfinal();
 }
 
-        
+//Funcion validar        
 function validar(presupuesto) {
     var valido = "s";
     var mensaje = "";
@@ -223,6 +231,3 @@ function validar(presupuesto) {
     return true; // Permite el envío del formulario si no hay errores
 
 }
-
-
-
