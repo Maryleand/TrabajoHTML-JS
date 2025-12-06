@@ -411,6 +411,10 @@ height: 450px;
     margin: 0 2% 0 2%;
     padding-top: 1%;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .imgOpiniones{
