@@ -73,13 +73,12 @@ let contenedor = []
 //Elementos
 
 const selectorproducto = document.getElementById("seleccionproducto")
-const botonagregar = document.getElementById("agregar")
 const contenedorSeleccion = document.getElementById("productoSeleccionado")
 const elementototalfinal = document.getElementById("total-final")
 
 //Evento para agregar productos
 
-botonagregar.addEventListener('click', () => {
+selectorproducto.addEventListener('change', () => {
     const opcionselecionada = selectorproducto.options[selectorproducto.selectedIndex];
     const valorselecionado = opcionselecionada.value;
 
@@ -231,3 +230,5 @@ function validar(presupuesto) {
     return true; // Permite el envío del formulario si no hay errores
 
 }
+
+
