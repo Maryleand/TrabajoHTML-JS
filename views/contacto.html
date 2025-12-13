@@ -87,41 +87,6 @@
         <script src="../js/scripts.js"></script>
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
         <script src="../librerias/leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
-        <!--Script para la configuracion del mapa-->
-        <script>
-            // Direccion + zoom
-            var mimapa = L.map("Mapa").setView([36.7213, -4.4214], 15);
-            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                maxZoom: 18, 
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-            }).addTo(mimapa); 
-
-            var destinoFijo = L.latLng(36.7215, -4.4198);
-
-            function calcularRutaDesdeUsuario() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        // Obtiene las coordenadas del usuario
-                        var ubicacionUsuario = L.latLng(position.coords.latitude, position.coords.longitude);
-                        
-                        // Agrega un marcador en la ubicación del usuario (opcional)
-                        L.marker(destinoFijo).addTo(mimapa).bindPopup('Encuentranos aquí').openPopup();
-                        
-                        // Crea el control de ruta con waypoints dinámicos
-                        L.Routing.control({
-                            waypoints: [
-                                ubicacionUsuario,  // Inicio: Ubicación del usuario
-                                destinoFijo        // Destino: Fijo
-                            ],
-                            show: true,
-                            addWaypoints: false
-                        }).addTo(mimapa);
-                        
-                    });
-                }
-            }
-
-calcularRutaDesdeUsuario(); 
-        </script>
+        <script src="../js/contacto.js"></script>
     </body>
 </html>
