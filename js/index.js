@@ -21,7 +21,7 @@
                 cadena += "<h2>" + titulos[i].childNodes[0].nodeValue + "</h2><div id='noticiaeImg'><div id='cuerpoNoticias'>";
                 cadena += fechas[i].childNodes[0].nodeValue + "<br><br>";
                 cadena += descripciones[i].childNodes[0].nodeValue + "</div>";
-                cadena += "<div><img src='" + imagenes[i].childNodes[0].nodeValue + "' alt='Portada de noticia' id='imgNoticias'></div></div>";}
+                cadena += "<div><img src='" + imagenes[i].childNodes[0].nodeValue + "' alt='Portada de noticia' id='imgNoticias' width='640' height='360' ></div></div>";}
             document.getElementById("noticias").innerHTML = cadena;
         }
 
