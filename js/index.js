@@ -18,10 +18,10 @@
             const fechas = objHttp.getElementsByTagName('fecha');
             const imagenes = objHttp.getElementsByTagName('imagen');
             for (i = 0; i < titulos.length; i++) {
-                cadena += "<div id='cuerpoNoticias'> <h4>" + titulos[i].childNodes[0].nodeValue + "</h4>";
+                cadena += "<h2>" + titulos[i].childNodes[0].nodeValue + "</h2><div id='noticiaeImg'><div id='cuerpoNoticias'>";
                 cadena += fechas[i].childNodes[0].nodeValue + "<br><br>";
                 cadena += descripciones[i].childNodes[0].nodeValue + "</div>";
-                cadena += "<div id='imgNoticias'><img src='" + imagenes[i].childNodes[0].nodeValue + "' alt='Portada de noticia' id='imgNoticias'></div><br/>";}
+                cadena += "<div><img src='" + imagenes[i].childNodes[0].nodeValue + "' alt='Portada de noticia' id='imgNoticias'></div></div>";}
             document.getElementById("noticias").innerHTML = cadena;
         }
 

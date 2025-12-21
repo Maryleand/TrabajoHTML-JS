@@ -35,7 +35,7 @@ body{
     top: 30%;
     left: 0;
     z-index: 1001;
-    display: flex; /* Flexbox para alinear los elementos */
+    display: flex;
     align-items: center;
     justify-content: right;
 }
@@ -95,16 +95,23 @@ body{
 }
 
 #inicio{
-    margin-top: 23%;
+    margin-top: 25%;
 }
 
-h1,h2{
-    color: #1D59A6;
+
+h1{
+    color: #1D59A6; 
 }
+
 
 /* Estilos Index*/
 
 /*Primer section*/
+
+.sinMarginH1{
+    margin-bottom: -9%;
+}
+
 #Vision{
     padding-right: 5%;
 }
@@ -116,7 +123,9 @@ h1,h2{
     border-radius: 15px;
 }
 
+
 /*Segunda section*/
+
 #bannerPres{
     padding-left: 5%;
     text-align: center;
@@ -128,19 +137,16 @@ h1,h2{
     border-radius: 15px;
 }
 
-.textTitulo{
-    text-align: center;
-    color: #ffffff;
-    background-color: #10A47F;
-    padding: 5px 0px 5px 0px;
-    border-radius: 15px;
+#textTitulo{
+    margin: 0 2% -9% 45%;
 }
 
-.textTitulo h2{
-    color: #ffffff;
+#pSection2{
+    margin-bottom: 5%;
 }
 
 /*Boton segunda section*/
+
 #botonRedi{
     color: #0C4389;
     text-decoration: none;
@@ -159,6 +165,12 @@ h1,h2{
 }
 
 /*Tercer section*/
+
+#h1VerdeCentro{
+    color: #10A47F ;
+    margin: 0 35% 0 41%;
+} /*Usado en tercer y cuarto section del index*/
+
 #bannerPromo{
     position: relative;
     width: 35rem;
@@ -207,36 +219,49 @@ h1,h2{
 
 
 
-/*Cuarta section, Div noticias + contenido*/
+/*Cuarta section, Div noticias + contenido extraido xml*/
 
 #noticias{
     display: flex;
-    align-items: center;
     margin: 5% 0% 2% 0%;
     border: #10A47F;
     border-width: 5px;
     border-style: double;
     border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
 }
 
+#noticiaeImg{
+    display: flex;
+    align-items: center;
+}
 
 #cuerpoNoticias{
     padding-right: 5%;
-    margin-left: 10px;
+    margin-left: 1%;
 }
 
-#cuerpoNoticias h4{
+#noticias h2{
     color: #018765;
+    margin: 5% 0 -7% 1%;
 }
 
 #imgNoticias{
     margin: 10px;
     border-radius: 15px;
+    width: 40em;
+    height: 22em;
 }
 
 /*Estilos Galeria*/
 
 /*Primer section*/
+
+#marginH1{
+    margin-bottom: 3%;
+}
+
 .imgProduc{
     height: 15rem;
     width: 25rem;
@@ -259,15 +284,16 @@ h1,h2{
     margin-top: 1%;
 }
 
-.titleProduc{
-    color: #1D59A6;
-    font-weight: bold;
-}
 
 /*Segundo section*/
 
+#tituloH1{
+    margin-bottom: -5%;
+    color: #149978;
+}
+
 .tituloPresu{
-    color: #018765;
+    color: #149978;
     font-weight: bold;
 }
 
@@ -278,6 +304,26 @@ h1,h2{
 
 #MargExtrasection{
     margin-top: 3%;
+}
+
+/*Tercer section*/
+
+#posicionH1{
+    margin: 0 15% 6% 30%;
+
+}
+
+.titleProduc{
+    color: #1D59A6;
+    font-weight: bold;
+}
+
+.textBorderinset{
+    text-align: center;
+    border: #1D59A6;
+    border-width: 5px;
+    border-style: inset;
+    border-radius: 15px;
 }
 
 /*Estilos contacto*/
@@ -306,20 +352,17 @@ h1,h2{
 }
 
 /*Segundo section*/
+
+#h1Contacto{
+    margin: 5% 29% 5% 38%;
+}
+
 #Mapa{
 height: 450px;
     width: 800px;
     margin: 2% 0 3% 20%;
     border-radius: 15px;
 }
-
-.textBorderinset{
-    text-align: center;
-    border: #1D59A6;
-    border-width: 5px;
-    border-style: inset;
-    border-radius: 15px;
-}/*Estilo usado en galeria y contacto*/
 
 
 /*Estilos presupuesto*/
@@ -391,6 +434,10 @@ height: 450px;
 }
 
 /*Segundo section*/
+
+#h1Presupuesto{
+    margin: 0 15% 6% 30%;
+}
 .opiniones{
     border-color: #3D6EAD;
     border-style: inset;
@@ -411,14 +458,6 @@ height: 450px;
     width: 5em;
 }
 
-.textOpiniones{
-    text-align: center;
-    border: #1D59A6   ;
-    border-width: 5px;
-    border-style: double;
-    padding: 5px 0px 5px 0px;
-    border-radius: 15px;
-}
 /*Estilos del footer*/
 .footer{
     position: relative;
